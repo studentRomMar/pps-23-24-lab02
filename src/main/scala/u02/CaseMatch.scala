@@ -15,9 +15,16 @@ object CaseMatch extends App:
     case n if n > 0 => "pos"
     case 0 => "zero"
 
+  // ex part 2
+  val positive: Int => String = _ match
+    case x if x >= 0 => "positive"
+    case x if x < 0 => "negative"
+
   println(f(1)) // pos
   println(f(0)) // zero
   // f(-1) raises a scala.MatchError
+
+  println(positive(3))
 
   val g: Int => String = { case n if n > 0 => "pos" } // 1-liner
   println(g(1)) // pos
